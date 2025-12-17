@@ -1,5 +1,6 @@
 import sqlite3
 import pandas as pd
+from path_fix import resource_path
 from Backend.Logger import main_logger
 
 def book_category(conn):
@@ -25,7 +26,7 @@ def book_category(conn):
         cursor.execute(new_query, parameters)
 
 def fill_database():
-    df = pd.read_csv("Backend/Books_Database/BooksDatasetClean.csv")
+    df = pd.read_csv(resource_path("Backend/Books_Database/BooksDatasetClean.csv"))
     df.loc[df["Category"] == " Religion , Religion, Politics & State", "Category"] = "Religion, Politics & State"
 
 
