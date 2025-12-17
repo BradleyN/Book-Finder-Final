@@ -1,4 +1,4 @@
-name: "CI, Build Tests, CD"
+name: "CI and Deploy"
 
 on:
   push:
