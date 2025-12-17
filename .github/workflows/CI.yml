@@ -52,7 +52,7 @@ jobs:
             --cov-report=html \
 
       - name: Clear Database For Build
-        run: python3 -c "from Backend.Books_Database.fill_db import clear_db; clear_db()"
+        run: git checkout -- Backend/Books_Database/BooksDatabase.db
 
       - name: Linux Build
         run: |
